@@ -41,7 +41,7 @@ public class HuespedData {
             statement.setInt(2, huesped.getDni());
             statement.setString(3, huesped.getDomicilio());
             statement.setString(4,huesped.getCorreo());
-            statement.setDouble(5, huesped.getCelular());
+            statement.setLong(5, huesped.getCelular());
             
             statement.executeUpdate();
             
@@ -77,7 +77,7 @@ public class HuespedData {
                 huesped.setDni(resultSet.getInt("dni"));
                 huesped.setDomicilio(resultSet.getString("domicilio"));
                 huesped.setCorreo(resultSet.getString("correo"));
-                huesped.setCelular(resultSet.getDouble("celular"));
+                huesped.setCelular(resultSet.getLong("celular"));
     
                 huespedes.add(huesped);
             }      
@@ -111,7 +111,7 @@ public class HuespedData {
     
         try {
             
-            String sql = "UPDATE husped SET nombre = ?, dni = ? , domicilio = ? , correo = ? , celular = ? WHERE id = ?;";
+            String sql = "UPDATE huesped SET nombre = ?, dni = ? , domicilio = ? , correo = ? , celular = ? WHERE id_huesped = ?;";
 
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, huesped.getNombre());
@@ -119,7 +119,7 @@ public class HuespedData {
             //statement.setDate(2, Date.valueOf(huesped.getFecNac()));
             statement.setString(3, huesped.getDomicilio());
             statement.setString(4, huesped.getCorreo());
-            statement.setDouble(5, huesped.getCelular());
+            statement.setLong(5, huesped.getCelular());
             statement.setInt(6, huesped.getId());
             statement.executeUpdate();
     
@@ -135,7 +135,7 @@ public class HuespedData {
     Huesped huesped=null;
     try {
             
-            String sql = "SELECT * FROM huesped WHERE dni =?;";
+            String sql = "SELECT * FROM huesped WHERE dni = ? ;";
 
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setInt(1, dni);
@@ -145,13 +145,12 @@ public class HuespedData {
             
             while(resultSet.next()){
                 huesped = new Huesped();
-                huesped.setId(resultSet.getInt("id"));
+                huesped.setId(resultSet.getInt("id_huesped"));
                 huesped.setNombre(resultSet.getString("nombre"));
-                //huesped.setFecNac(resultSet.getDate("fecNac").toLocalDate());
                 huesped.setDni(resultSet.getInt("dni"));
                 huesped.setDomicilio(resultSet.getString("domicilio"));
                 huesped.setCorreo(resultSet.getString("correo"));
-                huesped.setCelular(resultSet.getDouble("celular"));
+                huesped.setCelular(resultSet.getLong("celular"));
                 
             }      
             statement.close();

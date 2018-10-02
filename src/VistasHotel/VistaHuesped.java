@@ -14,15 +14,16 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Usuario
+ * @author Gabriel Aballay
  */
 public class VistaHuesped extends javax.swing.JInternalFrame {
     private String nombre, direccion, correo;
     private int dni;
-    private double celular;
+    private long celular;
+    private int id;
     private HuespedData huespedData;
     private Conexion conexion;
-    
+    private int activobuscar;
     /**
      * Creates new form VistaHuesped
      * Y establece conexion
@@ -66,7 +67,6 @@ public class VistaHuesped extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setTitle("REGISTRAR HUESPED");
-        setFocusTraversalPolicy(null);
 
         jLabel1.setText("Nombre");
 
@@ -87,13 +87,30 @@ public class VistaHuesped extends javax.swing.JInternalFrame {
         });
 
         jbActualizar.setText("Actualizar");
+        jbActualizar.setEnabled(false);
         jbActualizar.setPreferredSize(new java.awt.Dimension(80, 24));
+        jbActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbActualizarActionPerformed(evt);
+            }
+        });
 
         jbBuscar.setText("Buscar");
         jbBuscar.setPreferredSize(new java.awt.Dimension(79, 24));
+        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarActionPerformed(evt);
+            }
+        });
 
         jbBorrar.setText("Borrar");
+        jbBorrar.setEnabled(false);
         jbBorrar.setPreferredSize(new java.awt.Dimension(79, 24));
+        jbBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBorrarActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Ej.: nombrecorreo@ulp.edu.ar");
 
@@ -181,22 +198,68 @@ public class VistaHuesped extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
-        //TRASPASO DE VARIABLES
+        activobuscar=0;// VARIABLE QUE CONTROLA EL ESTADO DEL BOTON BUSCAR
+        //TRASPASO DE VARIABLES BOTON GUARDAR
         nombre=jtNombre.getText();
         dni=Integer.parseInt(jtDni.getText());
         direccion=jtDireccion.getText();
         correo=jtCorreo.getText();
-        celular= Double.parseDouble(jtCelular.getText());
+        celular= Long.parseLong(jtCelular.getText());
         //System.out.println(celular);
         
         // CREACCION DE UN NUEVO HUESPED Y LLAMADA AL METODO guardarHuesped()
         Huesped huesped=new Huesped(nombre,dni,direccion,correo,celular);
         huespedData.guardarHuesped(huesped);
         JOptionPane.showMessageDialog(null, "Se Guardo Correctamente!!!");
-        //LIMPIAR CASILLA DE TEXTO
+        
+        //LIMPIAR CASILLAS DE TEXTO
         jtNombre.setText(""); jtDni.setText(""); jtDireccion.setText("");
         jtCorreo.setText(""); jtCelular.setText("");
     }//GEN-LAST:event_jbGuardarActionPerformed
+
+    private void jbActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActualizarActionPerformed
+        //TRASPASO DE VARIABLES BOTON ACTUALIZAR
+        nombre=jtNombre.getText();
+        dni=Integer.parseInt(jtDni.getText());
+        direccion=jtDireccion.getText();
+        correo=jtCorreo.getText();
+        celular= Long.parseLong(jtCelular.getText());
+                    
+        // CREACCION DE UN NUEVO HUESPED Y LLAMADA AL METODO actualizarHuesped()
+        Huesped huesped=new Huesped(id,nombre,dni,direccion,correo,celular);
+        huespedData.actualizarHusped(huesped);
+        JOptionPane.showMessageDialog(null, "Se Actualizo Correctamente!!!");
+        
+        //LIMPIAR CASILLAS DE TEXTO
+        jtNombre.setText(""); jtDni.setText(""); jtDireccion.setText("");
+        jtCorreo.setText(""); jtCelular.setText("");
+        jbActualizar.setEnabled(false);
+        jbBorrar.setEnabled(false);
+        
+        
+    }//GEN-LAST:event_jbActualizarActionPerformed
+
+    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+        jbActualizar.setEnabled(true);
+        jbBorrar.setEnabled(true);
+        int dniBuscar;
+        dniBuscar=Integer.parseInt(JOptionPane.showInputDialog("Ingrese DNI del Huesped"));
+        Huesped huesped=huespedData.buscarHuesped(dniBuscar);
+        if(huesped!=null){
+                jtNombre.setText(huesped.getNombre());
+                jtDni.setText(huesped.getDni()+"");
+                jtDireccion.setText(huesped.getDomicilio());
+                jtCorreo.setText(huesped.getCorreo());
+                jtCelular.setText(huesped.getCelular()+"");
+                id=huesped.getId();
+        }
+        
+    }//GEN-LAST:event_jbBuscarActionPerformed
+
+    private void jbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBorrarActionPerformed
+
+
+    }//GEN-LAST:event_jbBorrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
