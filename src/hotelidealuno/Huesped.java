@@ -15,9 +15,9 @@ public class Huesped {
     private int dni;
     private String domicilio;
     private String correo;
-    private int Celular;
+    private double Celular;
 
-    public Huesped(int id, String nombre, int dni, String domicilio, String correo, int Celular) {
+    public Huesped(int id, String nombre, int dni, String domicilio, String correo, double Celular) {
         this.id = id;
         this.nombre = nombre;
         this.dni = dni;
@@ -26,12 +26,16 @@ public class Huesped {
         this.Celular = Celular;
     }
 
-    public Huesped(String nombre, int dni, String domicilio, int Celular) {
+    public Huesped(String nombre, int dni, String domicilio, String correo, double Celular) {
+        id=-1;
         this.nombre = nombre;
         this.dni = dni;
         this.domicilio = domicilio;
+        this.correo = correo;
         this.Celular = Celular;
     }
+
+ 
 
     public Huesped(String nombre, int dni, String domicilio, String correo) {
         this.nombre = nombre;
@@ -84,11 +88,11 @@ public class Huesped {
         this.correo = correo;
     }
 
-    public int getCelular() {
+    public double getCelular() {
         return Celular;
     }
 
-    public void setCelular(int Celular) {
+    public void setCelular(double Celular) {
         this.Celular = Celular;
     }
     
