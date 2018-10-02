@@ -28,17 +28,24 @@ public class HuespedData {
             System.out.println("Error al abrir al obtener la conexion");
         }
     }
+
+
     public void guardarHuesped(Huesped huesped){
         try {
             
-            String sql = "INSERT INTO huesped (nombre, dni, domicilio, correo, celular ) VALUES ( ? , ? , ? , ? , ? );";
+            String sql = "INSERT INTO huesped ( nombre , dni , domicilio , correo , celular )"
+                    + " VALUES ( ? , ? , ? , ? , ? );";
 
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, huesped.getNombre());
             statement.setInt(2, huesped.getDni());
             statement.setString(3, huesped.getDomicilio());
             statement.setString(4,huesped.getCorreo());
+<<<<<<< HEAD
             statement.setLong(5, huesped.getCelular());
+=======
+            statement.setDouble(5, huesped.getCelular());
+>>>>>>> 95c6d12a36aebf63fd7326975a86c1ff954b9088
             
             statement.executeUpdate();
             
@@ -56,6 +63,7 @@ public class HuespedData {
         }
     }
     
+
     public List<Huesped> obtenerHuespedes(){
         List<Huesped> huespedes = new ArrayList<Huesped>();
             
@@ -73,7 +81,11 @@ public class HuespedData {
                 huesped.setDni(resultSet.getInt("dni"));
                 huesped.setDomicilio(resultSet.getString("domicilio"));
                 huesped.setCorreo(resultSet.getString("correo"));
+<<<<<<< HEAD
                 huesped.setCelular(resultSet.getLong("celular"));
+=======
+                huesped.setCelular(resultSet.getDouble("celular"));
+>>>>>>> 95c6d12a36aebf63fd7326975a86c1ff954b9088
     
                 huespedes.add(huesped);
             }      
@@ -82,28 +94,24 @@ public class HuespedData {
             System.out.println("Error al obtener los huesped: " + ex.getMessage());
         }
         
-        
         return huespedes;
     }
     
-    public void borrarAlumno(int id){
+    public void borrarHuesped(int id){
     try {
             
-            String sql = "DELETE FROM alumno WHERE id =?;";
+            String sql = "DELETE FROM huesped WHERE id =?;";
 
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setInt(1, id);
-           
             
             statement.executeUpdate();
-            
             
             statement.close();
     
         } catch (SQLException ex) {
             System.out.println("Error al insertar un huesped: " + ex.getMessage());
         }
-        
     
     }
     
@@ -119,11 +127,14 @@ public class HuespedData {
             //statement.setDate(2, Date.valueOf(huesped.getFecNac()));
             statement.setString(3, huesped.getDomicilio());
             statement.setString(4, huesped.getCorreo());
+<<<<<<< HEAD
             statement.setLong(5, huesped.getCelular());
+=======
+            statement.setDouble(5, huesped.getCelular());
+>>>>>>> 95c6d12a36aebf63fd7326975a86c1ff954b9088
             statement.setInt(6, huesped.getId());
             statement.executeUpdate();
     
-          
             statement.close();
     
         } catch (SQLException ex) {
@@ -132,14 +143,14 @@ public class HuespedData {
     
     }
     
-    public Huesped buscarHuesped(int id){
+    public Huesped buscarHuesped(int dni){
     Huesped huesped=null;
     try {
             
-            String sql = "SELECT * FROM huesped WHERE id =?;";
+            String sql = "SELECT * FROM huesped WHERE dni =?;";
 
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            statement.setInt(1, id);
+            statement.setInt(1, dni);
            
             
             ResultSet resultSet=statement.executeQuery();
@@ -152,15 +163,16 @@ public class HuespedData {
                 huesped.setDni(resultSet.getInt("dni"));
                 huesped.setDomicilio(resultSet.getString("domicilio"));
                 huesped.setCorreo(resultSet.getString("correo"));
+<<<<<<< HEAD
                 huesped.setCelular(resultSet.getLong("celular"));
+=======
+                huesped.setCelular(resultSet.getDouble("celular"));
+>>>>>>> 95c6d12a36aebf63fd7326975a86c1ff954b9088
                 
             }      
             statement.close();
             
             
-            
-            
-    
         } catch (SQLException ex) {
             System.out.println("Error al insertar un huesped : " + ex.getMessage());
         }
