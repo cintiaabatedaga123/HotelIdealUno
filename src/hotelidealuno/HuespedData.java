@@ -41,15 +41,7 @@ public class HuespedData {
             statement.setInt(2, huesped.getDni());
             statement.setString(3, huesped.getDomicilio());
             statement.setString(4,huesped.getCorreo());
-<<<<<<< HEAD
             statement.setLong(5, huesped.getCelular());
-=======
-<<<<<<< HEAD
-            statement.setLong(5, huesped.getCelular());
-=======
-            statement.setDouble(5, huesped.getCelular());
->>>>>>> 95c6d12a36aebf63fd7326975a86c1ff954b9088
->>>>>>> 3bb91f2e8da904f1f56216e777547a213a75c4a2
             
             statement.executeUpdate();
             
@@ -85,15 +77,7 @@ public class HuespedData {
                 huesped.setDni(resultSet.getInt("dni"));
                 huesped.setDomicilio(resultSet.getString("domicilio"));
                 huesped.setCorreo(resultSet.getString("correo"));
-<<<<<<< HEAD
                 huesped.setCelular(resultSet.getLong("celular"));
-=======
-<<<<<<< HEAD
-                huesped.setCelular(resultSet.getLong("celular"));
-=======
-                huesped.setCelular(resultSet.getDouble("celular"));
->>>>>>> 95c6d12a36aebf63fd7326975a86c1ff954b9088
->>>>>>> 3bb91f2e8da904f1f56216e777547a213a75c4a2
     
                 huespedes.add(huesped);
             }      
@@ -135,15 +119,7 @@ public class HuespedData {
             //statement.setDate(2, Date.valueOf(huesped.getFecNac()));
             statement.setString(3, huesped.getDomicilio());
             statement.setString(4, huesped.getCorreo());
-<<<<<<< HEAD
             statement.setLong(5, huesped.getCelular());
-=======
-<<<<<<< HEAD
-            statement.setLong(5, huesped.getCelular());
-=======
-            statement.setDouble(5, huesped.getCelular());
->>>>>>> 95c6d12a36aebf63fd7326975a86c1ff954b9088
->>>>>>> 3bb91f2e8da904f1f56216e777547a213a75c4a2
             statement.setInt(6, huesped.getId());
             statement.executeUpdate();
     
@@ -174,15 +150,7 @@ public class HuespedData {
                 huesped.setDni(resultSet.getInt("dni"));
                 huesped.setDomicilio(resultSet.getString("domicilio"));
                 huesped.setCorreo(resultSet.getString("correo"));
-<<<<<<< HEAD
                 huesped.setCelular(resultSet.getLong("celular"));
-=======
-<<<<<<< HEAD
-                huesped.setCelular(resultSet.getLong("celular"));
-=======
-                huesped.setCelular(resultSet.getDouble("celular"));
->>>>>>> 95c6d12a36aebf63fd7326975a86c1ff954b9088
->>>>>>> 3bb91f2e8da904f1f56216e777547a213a75c4a2
                 
             }      
             statement.close();
