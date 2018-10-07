@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  *
- * @author Usuario
+ * @author Aballay Gabriel
  */
 public class HuespedData {
     private Connection connection = null;
@@ -29,7 +29,7 @@ public class HuespedData {
         }
     }
 
-
+    // GUARDA UN HUESPED NUEVO EN LA BASE DE DATOS...
     public void guardarHuesped(Huesped huesped){
         try {
             
@@ -59,7 +59,7 @@ public class HuespedData {
         }
     }
     
-
+    // LISTA TODOS LOS HUESPEDES EXISTENTES EN LA BASE DE DATOS (metodo no utilizado)
     public List<Huesped> obtenerHuespedes(){
         List<Huesped> huespedes = new ArrayList<Huesped>();
             
@@ -89,13 +89,14 @@ public class HuespedData {
         return huespedes;
     }
     
-    public void borrarHuesped(int id){
-    try {
+    // BORRA UN HUESPED POR EL DNI ...
+    public void borrarHuesped(int dni){
+        try {
             
-            String sql = "DELETE FROM huesped WHERE id =?;";
+            String sql = "DELETE FROM huesped WHERE dni = ?;";
 
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            statement.setInt(1, id);
+            statement.setInt(1, dni);
             
             statement.executeUpdate();
             
@@ -107,6 +108,7 @@ public class HuespedData {
     
     }
     
+    // ACTUALIZAR UN HUESPED EXISTENTE EN LA BASE DE DATOS...
     public void actualizarHusped(Huesped huesped){
     
         try {
@@ -131,6 +133,7 @@ public class HuespedData {
     
     }
     
+    // BUSCA UN HUESPED EXISTENTE EN LA BASE DE DATOS...
     public Huesped buscarHuesped(int dni){
     Huesped huesped=null;
     try {
