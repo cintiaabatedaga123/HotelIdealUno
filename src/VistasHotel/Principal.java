@@ -5,7 +5,10 @@
  */
 package VistasHotel;
 
+import Imagen.ImagenFondo;
 import java.awt.Dimension;
+import javax.swing.JFrame;
+
 
 /**
  *
@@ -19,6 +22,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        escritorio.setBorder(new ImagenFondo());
     }
 
     /**
@@ -73,15 +78,18 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        escritorio.setBackground(new java.awt.Color(0, 0, 102));
+        escritorio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 822, Short.MAX_VALUE)
+            .addGap(0, 820, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 570, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
