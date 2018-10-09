@@ -71,9 +71,8 @@ public class HuespedData {
             Huesped huesped;
             while(resultSet.next()){
                 huesped = new Huesped();
-                huesped.setId(resultSet.getInt("id")); 
+                huesped.setId(resultSet.getInt("id_huesped")); 
                 huesped.setNombre(resultSet.getString("nombre"));
-                //huesped.setFecNac(resultSet.getDate("fecNac").toLocalDate());
                 huesped.setDni(resultSet.getInt("dni"));
                 huesped.setDomicilio(resultSet.getString("domicilio"));
                 huesped.setCorreo(resultSet.getString("correo"));
