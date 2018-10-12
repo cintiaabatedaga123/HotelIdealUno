@@ -41,7 +41,6 @@ public class VistaHuesped extends javax.swing.JInternalFrame {
         conexion = new Conexion("jdbc:mysql://localhost/hotelideal1", "root", "");
         huespedData = new HuespedData(conexion);
         modelo=new DefaultTableModel();
-        huespedData=new HuespedData(conexion);
         listaHuespedes=(ArrayList)huespedData.obtenerHuespedes();
         
         armaCabeceraTabla();
@@ -286,10 +285,8 @@ public class VistaHuesped extends javax.swing.JInternalFrame {
     }
         public void borraFilasTabla(){
             int a =modelo.getRowCount()-1;
-            System.out.println("Tabla "+a);
             for(int i=a;i>=0;i--){
                 modelo.removeRow(i);
-                System.out.println("Tabla "+i);
             }
       }
 
