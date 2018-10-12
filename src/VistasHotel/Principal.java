@@ -164,7 +164,7 @@ public class Principal extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        VistaOpcionesReserva vm=new VistaOpcionesReserva();
+        VistaBuscarReserva vm=new VistaBuscarReserva();
         vm.setVisible(true);
         vm.setLocation(25, 25);
         escritorio.add(vm);
