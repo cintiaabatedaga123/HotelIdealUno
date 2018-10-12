@@ -6,16 +6,13 @@
 package VistasHotel;
 
 import Imagen.ImagenFondo;
-import java.awt.Dimension;
 import javax.swing.JFrame;
-
 
 /**
  *
  * @author Usuario
  */
 public class Principal extends javax.swing.JFrame {
-    
 
     /**
      * Creates new form Principal
@@ -35,95 +32,74 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        escritorio = new javax.swing.JDesktopPane();
+        escritorio = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        escritorio.setBackground(new java.awt.Color(0, 0, 102));
-        escritorio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 862, Short.MAX_VALUE)
+            .addGap(0, 1026, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 549, Short.MAX_VALUE)
+            .addGap(0, 534, Short.MAX_VALUE)
         );
 
         jMenu1.setText("HUESPED");
-        jMenu1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jMenu1.setMargin(new java.awt.Insets(0, 2, 0, 6));
 
-        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/red.png"))); // NOI18N
-        jMenuItem5.setText("Registrar Huesped");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem5);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("HABITACIONES");
-        jMenu2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jMenu2.setMargin(new java.awt.Insets(0, 0, 0, 6));
-
-        jMenuItem1.setText("Tipo de Habitaciones");
+        jMenuItem1.setText("Registrar Huesped");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setText("Estado de Habitaciones");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("HABITACIONES");
+
+        jMenuItem2.setText("Tipos de Habitaciones");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
+
+        jMenuItem3.setText("Habitaciones Libres");
+        jMenu2.add(jMenuItem3);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("RESERVAS");
-        jMenu3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jMenu3.setMargin(new java.awt.Insets(0, 0, 0, 6));
 
-        jMenuItem6.setText("Crear Reserva");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem4.setText("Crear Reserva");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem6);
+        jMenu3.add(jMenuItem4);
 
-        jMenuItem7.setText("Buscar/Actualizar/ Eliminar Reservas");
-        jMenu3.add(jMenuItem7);
+        jMenuItem5.setText("Buscar/Actualizar/Cancelar Reserva");
+        jMenu3.add(jMenuItem5);
 
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("SALIR");
-        jMenu4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu4MouseClicked(evt);
-            }
-        });
-        jMenu4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu4ActionPerformed(evt);
-            }
-        });
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -132,64 +108,45 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
-          // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu4ActionPerformed
-
-    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
-       System.exit(0); // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu4MouseClicked
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        escritorio.removeAll();
-        escritorio.repaint();
-        VistaTipoHabitacion vh=new VistaTipoHabitacion();
-        vh.setVisible(true);
-        vh.setLocation(200, 50);
-        escritorio.add(vh);
-        escritorio.moveToFront(vh);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
         VistaHuesped vh=new VistaHuesped();
         vh.setVisible(true);
         vh.setLocation(200, 50);
         escritorio.add(vh);
-        escritorio.moveToFront(vh);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+        //escritorio.moveToFront(vh);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-<<<<<<< HEAD
+        VistaTipoHabitacion vh=new VistaTipoHabitacion();
+        vh.setVisible(true);
+        vh.setLocation(200, 50);
+        escritorio.add(vh);
+        //escritorio.moveToFront(vh);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
         VistaReserva vh=new VistaReserva();
         vh.setVisible(true);
         vh.setLocation(200, 50);
         escritorio.add(vh);
-        escritorio.moveToFront(vh);
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
-=======
-        VistaBuscarReserva vm=new VistaBuscarReserva();
-        vm.setVisible(true);
-        vm.setLocation(25, 25);
-        escritorio.add(vm);
-        escritorio.moveToFront(vm);
-       
-    }//GEN-LAST:event_jButton3ActionPerformed
->>>>>>> d957e7ac07ff1143e679353727ca050f6c8073cf
+        //escritorio.moveToFront(vh);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,7 +184,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JPanel escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -235,8 +192,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     // End of variables declaration//GEN-END:variables
 }
