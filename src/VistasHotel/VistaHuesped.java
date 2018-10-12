@@ -35,12 +35,6 @@ public class VistaHuesped extends javax.swing.JInternalFrame {
     public VistaHuesped() {
         initComponents();
         try {
-<<<<<<< HEAD
-        conexion = new Conexion("jdbc:mysql://localhost/hotelideal1", "root", "");
-        huespedData = new HuespedData(conexion);
-        modelo=new DefaultTableModel();
-        listaHuespedes=(ArrayList)huespedData.obtenerHuespedes();
-=======
             conexion=new Conexion("jdbc:mysql://localhost/hotelideal1","root","");
             huespedData=new HuespedData(conexion);
             modelo=new DefaultTableModel();
@@ -50,8 +44,6 @@ public class VistaHuesped extends javax.swing.JInternalFrame {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(VistaHuesped.class.getName()).log(Level.SEVERE, null, ex);
         }
->>>>>>> 338cfec70a0b90bdae53ffa158d2068448e3b362
-        
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -300,34 +292,21 @@ public class VistaHuesped extends javax.swing.JInternalFrame {
             modelo.addColumn(it);
         }
         jHuespes.setModel(modelo);
-    }
-<<<<<<< HEAD
+        }
+        
         public void borraFilasTabla(){
             int a =modelo.getRowCount()-1;
             for(int i=a;i>=0;i--){
                 modelo.removeRow(i);
             }
-      }
+        }
 
         public void cargaDatos(){
-         borraFilasTabla();
-=======
-    
-    public void borraFilasTabla(){
-        int a=modelo.getRowCount()-1;
->>>>>>> 338cfec70a0b90bdae53ffa158d2068448e3b362
-        
-        for (int i=a; i>=0;i--){
-            modelo.removeRow(i);
+            borraFilasTabla();
+            for (Huesped m:listaHuespedes){
+                modelo.addRow(new Object[]{m.getNombre(),m.getDni(),m.getDomicilio(),m.getCorreo(),m.getCelular()});
+            }
         }
-    }
-    
-    public void cargaDatos(){
-        borraFilasTabla();
-        for (Huesped m:listaHuespedes){
-            modelo.addRow(new Object[]{m.getNombre(),m.getDni(),m.getDomicilio(),m.getCorreo(),m.getCelular()});
-        }
-    }
     
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
 
