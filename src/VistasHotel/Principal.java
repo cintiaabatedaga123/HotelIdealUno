@@ -174,12 +174,22 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
+<<<<<<< HEAD
         VistaReserva vh=new VistaReserva();
         vh.setVisible(true);
         vh.setLocation(200, 50);
         escritorio.add(vh);
         escritorio.moveToFront(vh);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+=======
+        VistaBuscarReserva vm=new VistaBuscarReserva();
+        vm.setVisible(true);
+        vm.setLocation(25, 25);
+        escritorio.add(vm);
+        escritorio.moveToFront(vm);
+       
+    }//GEN-LAST:event_jButton3ActionPerformed
+>>>>>>> d957e7ac07ff1143e679353727ca050f6c8073cf
 
     /**
      * @param args the command line arguments
