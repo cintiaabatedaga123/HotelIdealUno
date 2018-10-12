@@ -7,7 +7,7 @@ package hotelidealuno;
 
 /**
  *
- * @author Usuario
+ * @author Aballay Gabriel
  */
 public class Huesped {
     private int id=-1;
@@ -15,9 +15,9 @@ public class Huesped {
     private int dni;
     private String domicilio;
     private String correo;
-    private int Celular;
+    private long Celular;
 
-    public Huesped(int id, String nombre, int dni, String domicilio, String correo, int Celular) {
+    public Huesped(int id, String nombre, int dni, String domicilio, String correo, long Celular) {
         this.id = id;
         this.nombre = nombre;
         this.dni = dni;
@@ -26,19 +26,15 @@ public class Huesped {
         this.Celular = Celular;
     }
 
-    public Huesped(String nombre, int dni, String domicilio, int Celular) {
-        this.nombre = nombre;
-        this.dni = dni;
-        this.domicilio = domicilio;
-        this.Celular = Celular;
-    }
-
-    public Huesped(String nombre, int dni, String domicilio, String correo) {
+    public Huesped(String nombre, int dni, String domicilio, String correo, long Celular) {
+        id=-1;
         this.nombre = nombre;
         this.dni = dni;
         this.domicilio = domicilio;
         this.correo = correo;
+        this.Celular = Celular;
     }
+
 
     public Huesped() {
         id=-1;
@@ -84,13 +80,11 @@ public class Huesped {
         this.correo = correo;
     }
 
-    public int getCelular() {
+    public long getCelular() {
         return Celular;
     }
 
-    public void setCelular(int Celular) {
+    public void setCelular(long Celular) {
         this.Celular = Celular;
     }
-    
-    
 }
