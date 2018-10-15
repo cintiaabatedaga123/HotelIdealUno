@@ -339,10 +339,11 @@ public class VistaHuesped extends javax.swing.JInternalFrame {
         celular= Long.parseLong(jtCelular.getText());
 
         //**** CREACCION DE UN NUEVO HUESPED Y LLAMADA AL METODO actualizarHuesped()
-        Huesped huesped=new Huesped(id,nombre,dni,direccion,correo,celular);
-        huespedData.actualizarHusped(huesped);
-        JOptionPane.showMessageDialog(null, "Se Actualizo Correctamente!!!");
-
+        if (!nombre.equalsIgnoreCase("")){
+            Huesped huesped=new Huesped(id,nombre,dni,direccion,correo,celular);
+            huespedData.actualizarHusped(huesped);
+            JOptionPane.showMessageDialog(null, "Se Actualizo Correctamente!!!");
+        }
         //**** LIMPIAR CASILLAS DE TEXTO
         jtNombre.setText(""); jtDni.setText(""); jtDireccion.setText("");
         jtCorreo.setText(""); jtCelular.setText("");

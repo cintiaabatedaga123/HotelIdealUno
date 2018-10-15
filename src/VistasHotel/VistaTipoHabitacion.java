@@ -164,55 +164,42 @@ public class VistaTipoHabitacion extends javax.swing.JInternalFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(btnguardar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(74, 74, 74)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(48, 48, 48)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(274, 274, 274)
-                                .addComponent(cbotipo_cama, 0, 89, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cbotipo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(46, 46, 46))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(60, 60, 60))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtprecio_por_noche, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcantidad_personas, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcantidad_camas, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbotipo_cama, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbotipo, 0, 165, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtcantidad_personas, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtprecio_por_noche, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtcantidad_camas, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(128, 128, 128)
-                                .addComponent(btnactualizar)))))
-                .addGap(55, 55, 55))
+                        .addGap(76, 76, 76)
+                        .addComponent(btnguardar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90)
+                        .addComponent(btnborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82)
+                        .addComponent(btnbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(85, 85, 85)
+                        .addComponent(btnactualizar)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,13 +233,13 @@ public class VistaTipoHabitacion extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
                             .addComponent(cbotipo_cama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(70, 70, 70)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnguardar)
                     .addComponent(btnborrar)
                     .addComponent(btnactualizar)
                     .addComponent(btnbuscar))
-                .addGap(69, 69, 69))
+                .addGap(40, 40, 40))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -309,12 +296,10 @@ public class VistaTipoHabitacion extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         int confirma = JOptionPane.showConfirmDialog(rootPane, " Esta seguro que desea borrar");
         if (confirma == 0) {
-            System.out.println(confirma);
+            int codigo = Integer.parseInt(txtcodigo.getText());
+            tipoHabitacionData.borrarTipoHabitacion(codigo);
         }
-
-        int codigo = Integer.parseInt(txtcodigo.getText());
-        tipoHabitacionData.borrarTipoHabitacion(codigo);
-
+        
         // En blanco los campos de texto
         txtcodigo.setText("");
         txtprecio_por_noche.setText("");
@@ -324,25 +309,26 @@ public class VistaTipoHabitacion extends javax.swing.JInternalFrame {
 
     private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
         // TODO add your handling code here:
-        if (txtcodigo.getText() !=null) {
-        /*codigo = Integer.parseInt(txtcodigo.getText());*/
-        tipo = (String) cbotipo.getSelectedItem();
-        precioPorNoche = Double.parseDouble(txtprecio_por_noche.getText());
-        cantPersonasMax = Integer.parseInt(txtcantidad_personas.getText());
-        cantCamas = Integer.parseInt(txtcantidad_camas.getText());
-        tipoCama = (String) cbotipo_cama.getSelectedItem();
-
-        // Ingreso New TipoHabitacion        
-        TipoHabitacion tipoHabitacion = new TipoHabitacion(codigo, tipo, precioPorNoche, cantPersonasMax, cantCamas, tipoCama);
-        tipoHabitacionData.actualizarTipoHabitacion(tipoHabitacion);
-        JOptionPane.showMessageDialog(null, " Datos Actualizado ");
+        
+            /*codigo = Integer.parseInt(txtcodigo.getText());*/
+            tipo = (String) cbotipo.getSelectedItem();
+            precioPorNoche = Double.parseDouble(txtprecio_por_noche.getText());
+            cantPersonasMax = Integer.parseInt(txtcantidad_personas.getText());
+            cantCamas = Integer.parseInt(txtcantidad_camas.getText());
+            tipoCama = (String) cbotipo_cama.getSelectedItem();
+            codigo=Integer.parseInt(txtcodigo.getText());
+                
+        if (codigo!=0) {
+        // Ingreso New TipoHabitacion     
+            TipoHabitacion tipoHabitacion = new TipoHabitacion(id,codigo, tipo, precioPorNoche, cantPersonasMax, cantCamas, tipoCama);
+            tipoHabitacionData.actualizarTipoHabitacion(tipoHabitacion);
+            JOptionPane.showMessageDialog(null, " Datos Actualizado ");
 
         // En blanco los campos de texto
-        txtcodigo.setText("");
-        txtprecio_por_noche.setText("");
-        txtcantidad_camas.setText("");
-        txtcantidad_personas.setText("");
-
+            txtcodigo.setText("");
+            txtprecio_por_noche.setText("");
+            txtcantidad_camas.setText("");
+            txtcantidad_personas.setText("");
         }
     }//GEN-LAST:event_btnactualizarActionPerformed
 
@@ -353,10 +339,17 @@ public class VistaTipoHabitacion extends javax.swing.JInternalFrame {
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
         // TODO add your handling code here:
-        int codigo = Integer.parseInt(txtcodigo.getText());
+        int codigo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese Codigo de Habitacion"));
         TipoHabitacion tipoHabitacion = tipoHabitacionData.buscarTipoHabitacion(codigo);
-        
-
+        txtcodigo.setText(tipoHabitacion.getCodigo()+"");
+        txtprecio_por_noche.setText(tipoHabitacion.getPrecioPorNoche()+"");
+        txtcantidad_camas.setText(tipoHabitacion.getCantCamas()+"");
+        txtcantidad_personas.setText(tipoHabitacion.getCantPersonasMax()+"");
+        tipo=tipoHabitacion.getTipo();
+        id=tipoHabitacion.getId();
+        tipoCama=tipoHabitacion.getTipoCama();
+        cbotipo_cama.setSelectedItem(tipoCama);
+        cbotipo.setSelectedItem(tipo);
     }//GEN-LAST:event_btnbuscarActionPerformed
 
     private void txtcantidad_personasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcantidad_personasActionPerformed
