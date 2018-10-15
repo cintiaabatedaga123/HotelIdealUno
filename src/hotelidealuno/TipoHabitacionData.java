@@ -7,7 +7,6 @@ package hotelidealuno;
 
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,14 +31,15 @@ public class TipoHabitacionData {
     public void guardarTipoHabitacion(TipoHabitacion tipoHabitacion){
         try {
             
-            String sql = "INSERT INTO tipoHabitacion (tipo, precioPorNoche, cantPersonasMax, cantCamas, tipoCama ) VALUES ( ? , ? , ? , ? , ? );";
+            String sql = "INSERT INTO tipoHabitacion ( codigo, tipo, precioPorNoche, cantPersonasMax, cantCamas, tipoCama ) VALUES ( ? , ? , ? , ? , ? , ? );";
 
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            statement.setString(1, tipoHabitacion.getTipo());
-            statement.setDouble(2, tipoHabitacion.getPrecioPorNoche());
-            statement.setInt(3, tipoHabitacion.getCantPersonasMax());
-            statement.setInt(4, tipoHabitacion.getCantCamas());
-            statement.setString(5, tipoHabitacion.getTipoCama());
+            statement.setInt(1, tipoHabitacion.getCodigo());
+            statement.setString(2, tipoHabitacion.getTipo());
+            statement.setDouble(3, tipoHabitacion.getPrecioPorNoche());
+            statement.setInt(4, tipoHabitacion.getCantPersonasMax());
+            statement.setInt(5, tipoHabitacion.getCantCamas());
+            statement.setString(6, tipoHabitacion.getTipoCama());
             
             statement.executeUpdate();
             
@@ -69,8 +69,8 @@ public class TipoHabitacionData {
             while(resultSet.next()){
                 tipoHabitacion = new TipoHabitacion();
                 tipoHabitacion.setId(resultSet.getInt("id")); 
+                tipoHabitacion.setCodigo(resultSet.getInt("codigo"));
                 tipoHabitacion.setTipo(resultSet.getString("tipo"));
-                //huesped.setFecNac(resultSet.getDate("fecNac").toLocalDate());
                 tipoHabitacion.setPrecioPorNoche(resultSet.getDouble("precioPorNoche"));
                 tipoHabitacion.setCantPersonasMax(resultSet.getInt("cantPersonasMax"));
                 tipoHabitacion.setCantCamas(resultSet.getInt("cantCamas"));
@@ -87,13 +87,13 @@ public class TipoHabitacionData {
         return tipoHabitaciones;
     }
     
-    public void borrarTipoHabitacion(int id){
+    public void borrarTipoHabitacion(int codigo){
     try {
             
-            String sql = "DELETE FROM tipoHabitacion WHERE id =?;";
+            String sql = "DELETE FROM tipoHabitacion WHERE codigo =?;";
 
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            statement.setInt(1, id);
+            statement.setInt(1, codigo);
            
             
             statement.executeUpdate();
@@ -102,7 +102,7 @@ public class TipoHabitacionData {
             statement.close();
     
         } catch (SQLException ex) {
-            System.out.println("Error al insertar un tipoHabitacion: " + ex.getMessage());
+            System.out.println("Error al borrar un tipoHabitacion: " + ex.getMessage());
         }
         
     
@@ -112,35 +112,35 @@ public class TipoHabitacionData {
     
         try {
             
-            String sql = "UPDATE tipoHabitacion SET tipo = ?, precioPorNoche = ? , cantPersonasMax = ? , cantCamas = ? , tipoCama = ? WHERE id = ?;";
+            String sql = "UPDATE tipoHabitacion SET codigo = ?, tipo = ?, precioPorNoche = ? , cantPersonasMax = ? , cantCamas = ? , tipoCama = ? WHERE id_tipoHabitacion = ?;";
 
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            statement.setString(1, tipoHabitacion.getTipo());
-            statement.setDouble(2, tipoHabitacion.getPrecioPorNoche());
-            //statement.setDate(2, Date.valueOf(huesped.getFecNac()));
-            statement.setInt(3, tipoHabitacion.getCantPersonasMax());
-            statement.setInt(4, tipoHabitacion.getCantCamas());
-            statement.setString(5, tipoHabitacion.getTipoCama());
-            statement.setInt(6, tipoHabitacion.getId());
+            statement.setInt(1, tipoHabitacion.getCodigo());
+            statement.setString(2, tipoHabitacion.getTipo());
+            statement.setDouble(3, tipoHabitacion.getPrecioPorNoche());
+            statement.setInt(4, tipoHabitacion.getCantPersonasMax());
+            statement.setInt(5, tipoHabitacion.getCantCamas());
+            statement.setString(6, tipoHabitacion.getTipoCama());
+            statement.setInt(7, tipoHabitacion.getId());
             statement.executeUpdate();
     
           
             statement.close();
     
         } catch (SQLException ex) {
-            System.out.println("Error al insertar un tipoHabitacion : " + ex.getMessage());
+            System.out.println("Error al actualizar un tipoHabitacion : " + ex.getMessage());
         }
     
     }
     
-    public TipoHabitacion buscarTipoHabitacion(int id){
+    public TipoHabitacion buscarTipoHabitacion(int codigo){
     TipoHabitacion tipoHabitacion=null;
     try {
             
-            String sql = "SELECT * FROM tipoHabitacion WHERE id =?;";
+            String sql = "SELECT * FROM tipoHabitacion WHERE codigo =?;";
 
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            statement.setInt(1, id);
+            statement.setInt(1, codigo);
            
             
             ResultSet resultSet=statement.executeQuery();
@@ -148,8 +148,8 @@ public class TipoHabitacionData {
             while(resultSet.next()){
                 tipoHabitacion = new TipoHabitacion();
                 tipoHabitacion.setId(resultSet.getInt("id"));
+                tipoHabitacion.setCodigo(resultSet.getInt("codigo"));
                 tipoHabitacion.setTipo(resultSet.getString("tipo"));
-                //huesped.setFecNac(resultSet.getDate("fecNac").toLocalDate());
                 tipoHabitacion.setPrecioPorNoche(resultSet.getDouble("precioPorNoche"));
                 tipoHabitacion.setCantPersonasMax(resultSet.getInt("cantPersonasMax"));
                 tipoHabitacion.setCantCamas(resultSet.getInt("cantCamas"));
@@ -163,7 +163,7 @@ public class TipoHabitacionData {
             
     
         } catch (SQLException ex) {
-            System.out.println("Error al insertar un tipoHabitacion : " + ex.getMessage());
+            System.out.println("Error al buscar un tipoHabitacion : " + ex.getMessage());
         }
         
         return tipoHabitacion;

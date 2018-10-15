@@ -11,14 +11,15 @@ package hotelidealuno;
  */
 public class TipoHabitacion {
     private int id=-1;
+    private int codigo;
     private String tipo;
     private Double precioPorNoche;
     private int cantPersonasMax;
     private int cantCamas;
     private String tipoCama;
 
-    public TipoHabitacion(int id, String tipo, Double precioPorNoche, int cantPersonasMax, int cantCamas, String tipoCama) {
-        this.id = id;
+    public TipoHabitacion(int codigo, String tipo, Double precioPorNoche, int cantPersonasMax, int cantCamas, String tipoCama) {
+        this.codigo = codigo;
         this.tipo = tipo;
         this.precioPorNoche = precioPorNoche;
         this.cantPersonasMax = cantPersonasMax;
@@ -26,7 +27,9 @@ public class TipoHabitacion {
         this.tipoCama = tipoCama;
     }
 
-    public TipoHabitacion(String tipo, Double precioPorNoche, int cantPersonasMax, int cantCamas, String tipoCama) {
+    public TipoHabitacion(int id, int codigo, String tipo, Double precioPorNoche, int cantPersonasMax, int cantCamas, String tipoCama) {
+        this.id = id;
+        this.codigo = codigo;
         this.tipo = tipo;
         this.precioPorNoche = precioPorNoche;
         this.cantPersonasMax = cantPersonasMax;
@@ -36,6 +39,14 @@ public class TipoHabitacion {
     
 
     public TipoHabitacion() {}
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
     
     
 
@@ -47,6 +58,7 @@ public class TipoHabitacion {
         this.id = id;
     }
 
+    
     public String getTipo() {
         return tipo;
     }
