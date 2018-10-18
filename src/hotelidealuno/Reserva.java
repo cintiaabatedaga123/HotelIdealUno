@@ -5,6 +5,8 @@
  */
 package hotelidealuno;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author asus
@@ -12,29 +14,33 @@ package hotelidealuno;
 public class Reserva {
     private int id=-1;
     private int cantidadPersonas;
-    private String fechaEntrada;
-    private String fechaSalida;
+    private LocalDate fechaEntrada;
+    private LocalDate fechaSalida;
     private double importeTotal;
     private boolean estadoReserva;
+    private int id_habitacion;
+    private int id_huesped;
 
-    public Reserva(int id, int cantidadPersonas, String fechaEntrada, String fechaSalida, Double importeTotal, Boolean estadoReserva) {
+    public Reserva(int id, int cantidadPersonas, LocalDate fechaEntrada, LocalDate fechaSalida, double importeTotal, boolean estadoReserva, int id_habitacion, int id_huesped) {
         this.id = id;
         this.cantidadPersonas = cantidadPersonas;
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
         this.importeTotal = importeTotal;
         this.estadoReserva = estadoReserva;
+        this.id_habitacion = id_habitacion;
+        this.id_huesped = id_huesped;
     }
 
-    public Reserva(int cantidadPersonas, String fechaEntrada, String fechaSalida, double importeTotal, boolean estadoReserva) {
+    public Reserva(int cantidadPersonas, LocalDate fechaEntrada, LocalDate fechaSalida, double importeTotal, boolean estadoReserva, int id_habitacion, int id_huesped) {
+        id = -1;
         this.cantidadPersonas = cantidadPersonas;
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
         this.importeTotal = importeTotal;
         this.estadoReserva = estadoReserva;
-    }
-
-    public Reserva() {
+        this.id_habitacion = id_habitacion;
+        this.id_huesped = id_huesped;
     }
 
     public int getId() {
@@ -53,19 +59,19 @@ public class Reserva {
         this.cantidadPersonas = cantidadPersonas;
     }
 
-    public String getFechaEntrada() {
+    public LocalDate getFechaEntrada() {
         return fechaEntrada;
     }
 
-    public void setFechaEntrada(String fechaEntrada) {
+    public void setFechaEntrada(LocalDate fechaEntrada) {
         this.fechaEntrada = fechaEntrada;
     }
 
-    public String getFechaSalida() {
+    public LocalDate getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(String fechaSalida) {
+    public void setFechaSalida(LocalDate fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
@@ -77,15 +83,52 @@ public class Reserva {
         this.importeTotal = importeTotal;
     }
 
-    public boolean isEstadoReserva() {
+    public boolean getEstadoReserva() {
         return estadoReserva;
     }
 
     public void setEstadoReserva(boolean estadoReserva) {
         this.estadoReserva = estadoReserva;
     }
+
+    public int getId_habitacion() {
+        return id_habitacion;
+    }
+
+    public void setId_habitacion(int id_habitacion) {
+        this.id_habitacion = id_habitacion;
+    }
+
+    public int getId_huesped() {
+        return id_huesped;
+    }
+
+    public void setId_huesped(int id_huesped) {
+        this.id_huesped = id_huesped;
+    }
+
+    public Reserva() {
+        
+    }
+
+    public Object getNombre() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getNumeroHabitacion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getTipoHabitacion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getEstado() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     
     
     
-}
+ }
