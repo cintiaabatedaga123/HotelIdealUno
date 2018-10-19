@@ -10,27 +10,49 @@ package hotelidealuno;
  * @author Alumno
  */
 public class Habitacion {
-    private int id = -1;
+    private int idHabitacion=-1;
+    private int nroHabitacion;
     private int piso;
     private boolean estado;
+    private int id_tipoHabitacion;
 
-    public Habitacion() {
-    }
-
-    public Habitacion(int piso, boolean estado) {
-        this.id = id;
+    public Habitacion(int nroHabitacion,int piso, boolean estado, int id_tipoHabitacion) {
+        idHabitacion=-1;
+        this.nroHabitacion=nroHabitacion;
         this.piso = piso;
         this.estado = estado;
+        this.id_tipoHabitacion = id_tipoHabitacion;
     }
 
-    public int getId() {
-        return id;
+    public Habitacion(int idHabitacion,int nroHabitacion, int piso, boolean estado, int id_tipoHabitacion) {
+        this.idHabitacion = idHabitacion;
+        this.nroHabitacion=nroHabitacion;
+        this.piso = piso;
+        this.estado = estado;
+        this.id_tipoHabitacion = id_tipoHabitacion;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Habitacion() {
+        idHabitacion=-1;
     }
 
+    public int getIdHabitacion() {
+        return idHabitacion;
+    }
+
+    public void setIdHabitacion(int idHabitacion) {
+        this.idHabitacion = idHabitacion;
+    }
+
+    public int getNroHabitacion() {
+        return nroHabitacion;
+    }
+
+    public void setNroHabitacion(int nroHabitacion) {
+        this.nroHabitacion = nroHabitacion;
+    }
+
+    
     public int getPiso() {
         return piso;
     }
@@ -46,7 +68,14 @@ public class Habitacion {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-    
-    
+
+    public int getId_tipoHabitacion() {
+        return id_tipoHabitacion;
+    }
+
+    public void setId_tipoHabitacion(int id_tipoHabitacion) {
+        this.id_tipoHabitacion = id_tipoHabitacion;
+    }
+
     
 }

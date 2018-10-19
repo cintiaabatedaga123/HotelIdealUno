@@ -68,7 +68,7 @@ public class TipoHabitacionData {
             TipoHabitacion tipoHabitacion;
             while(resultSet.next()){
                 tipoHabitacion = new TipoHabitacion();
-                tipoHabitacion.setId(resultSet.getInt("id")); 
+                tipoHabitacion.setId(resultSet.getInt("id_tipohabitacion")); 
                 tipoHabitacion.setCodigo(resultSet.getInt("codigo"));
                 tipoHabitacion.setTipo(resultSet.getString("tipo"));
                 tipoHabitacion.setPrecioPorNoche(resultSet.getDouble("precioPorNoche"));
