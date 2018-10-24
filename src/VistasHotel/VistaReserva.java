@@ -110,6 +110,12 @@ public class VistaReserva extends javax.swing.JInternalFrame {
 
         jLabel21.setText("Celular");
 
+        txtDomicilio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDomicilioActionPerformed(evt);
+            }
+        });
+
         txtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDniActionPerformed(evt);
@@ -315,6 +321,10 @@ public class VistaReserva extends javax.swing.JInternalFrame {
 
 // TODO add your handling code here:
     }//GEN-LAST:event_buscarActionPerformed
+
+    private void txtDomicilioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDomicilioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDomicilioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
