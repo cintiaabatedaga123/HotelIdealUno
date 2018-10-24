@@ -45,7 +45,7 @@ public class VistaReserva extends javax.swing.JInternalFrame {
 
         chcActiva = new javax.swing.JCheckBox();
         chcInactiva = new javax.swing.JCheckBox();
-        spi = new javax.swing.JSpinner();
+        spiCantidadPersonas = new javax.swing.JSpinner();
         jButton2 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -70,8 +70,8 @@ public class VistaReserva extends javax.swing.JInternalFrame {
         tbl = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        dcFecha_entrada = new com.toedter.calendar.JDateChooser();
-        dcFecha_Salida = new com.toedter.calendar.JDateChooser();
+        dcFechaEntrada = new com.toedter.calendar.JDateChooser();
+        dcFechaSalida = new com.toedter.calendar.JDateChooser();
 
         setTitle("CREAR RESERVA");
 
@@ -93,6 +93,8 @@ public class VistaReserva extends javax.swing.JInternalFrame {
 
         jLabel19.setText("Tipo de Habitacion");
 
+        buscar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        buscar.setForeground(new java.awt.Color(0, 0, 255));
         buscar.setText("BUSCAR HUESPED");
         buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,11 +186,11 @@ public class VistaReserva extends javax.swing.JInternalFrame {
                             .addGap(35, 35, 35)
                             .addComponent(jLabel16)
                             .addGap(18, 18, 18)
-                            .addComponent(dcFecha_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dcFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(32, 32, 32)
                             .addComponent(jLabel17)
                             .addGap(18, 18, 18)
-                            .addComponent(dcFecha_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dcFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(65, 65, 65)
                             .addComponent(jLabel18)
                             .addGap(29, 29, 29)
@@ -203,7 +205,7 @@ public class VistaReserva extends javax.swing.JInternalFrame {
                                 .addGap(55, 55, 55)
                                 .addComponent(jLabel15)
                                 .addGap(18, 18, 18)
-                                .addComponent(spi, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(spiCantidadPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(46, 46, 46)
                                 .addComponent(jLabel14)
                                 .addGap(18, 18, 18)
@@ -222,7 +224,7 @@ public class VistaReserva extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(buscar)
@@ -241,12 +243,12 @@ public class VistaReserva extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20))
-                        .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel21)))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel20)))
+                    .addComponent(jLabel1))
+                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
@@ -269,18 +271,18 @@ public class VistaReserva extends javax.swing.JInternalFrame {
                                 .addComponent(chcInactiva))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(51, 51, 51)
-                        .addComponent(spi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(spiCantidadPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel16)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18)
                     .addComponent(txtImporteTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dcFecha_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dcFecha_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dcFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dcFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton4))
@@ -332,8 +334,8 @@ public class VistaReserva extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> cbxTipoHabitacion;
     private javax.swing.JCheckBox chcActiva;
     private javax.swing.JCheckBox chcInactiva;
-    private com.toedter.calendar.JDateChooser dcFecha_Salida;
-    private com.toedter.calendar.JDateChooser dcFecha_entrada;
+    private com.toedter.calendar.JDateChooser dcFechaEntrada;
+    private com.toedter.calendar.JDateChooser dcFechaSalida;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -349,7 +351,7 @@ public class VistaReserva extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSpinner spi;
+    private javax.swing.JSpinner spiCantidadPersonas;
     private javax.swing.JTable tbl;
     private javax.swing.JTextField txtCelular;
     private javax.swing.JTextField txtCorreo;
