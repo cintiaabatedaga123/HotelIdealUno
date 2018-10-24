@@ -52,9 +52,7 @@ public class VistaReserva extends javax.swing.JInternalFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        txtFechaSalida = new java.awt.TextField();
         txtImporteTotal = new java.awt.TextField();
-        txtFechaEntrada = new java.awt.TextField();
         jLabel19 = new javax.swing.JLabel();
         buscar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
@@ -72,6 +70,8 @@ public class VistaReserva extends javax.swing.JInternalFrame {
         tbl = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        dcFecha_entrada = new com.toedter.calendar.JDateChooser();
+        dcFecha_Salida = new com.toedter.calendar.JDateChooser();
 
         setTitle("CREAR RESERVA");
 
@@ -177,13 +177,13 @@ public class VistaReserva extends javax.swing.JInternalFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(35, 35, 35)
                             .addComponent(jLabel16)
-                            .addGap(22, 22, 22)
-                            .addComponent(txtFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(58, 58, 58)
+                            .addGap(18, 18, 18)
+                            .addComponent(dcFecha_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(32, 32, 32)
                             .addComponent(jLabel17)
-                            .addGap(22, 22, 22)
-                            .addComponent(txtFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(80, 80, 80)
+                            .addGap(18, 18, 18)
+                            .addComponent(dcFecha_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(65, 65, 65)
                             .addComponent(jLabel18)
                             .addGap(29, 29, 29)
                             .addComponent(txtImporteTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -267,14 +267,14 @@ public class VistaReserva extends javax.swing.JInternalFrame {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel16)
-                    .addComponent(txtFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18)
-                    .addComponent(txtImporteTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtImporteTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dcFecha_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dcFecha_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton4))
@@ -322,6 +322,8 @@ public class VistaReserva extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> cbxTipoHabitacion;
     private javax.swing.JCheckBox chcActiva;
     private javax.swing.JCheckBox chcInactiva;
+    private com.toedter.calendar.JDateChooser dcFecha_Salida;
+    private com.toedter.calendar.JDateChooser dcFecha_entrada;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -343,8 +345,6 @@ public class VistaReserva extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtDni;
     private javax.swing.JTextField txtDomicilio;
-    private java.awt.TextField txtFechaEntrada;
-    private java.awt.TextField txtFechaSalida;
     private java.awt.TextField txtImporteTotal;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
