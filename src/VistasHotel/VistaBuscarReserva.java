@@ -59,15 +59,15 @@ public final class VistaBuscarReserva extends javax.swing.JInternalFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbl = new javax.swing.JTable();
+        tblReservas = new javax.swing.JTable();
         txtModificarReserva = new javax.swing.JButton();
         txtCancelarReserva = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLNombre = new javax.swing.JLabel();
+        jLDni = new javax.swing.JLabel();
+        jLDomicilio = new javax.swing.JLabel();
+        jLCorreo = new javax.swing.JLabel();
+        jLCelular = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         txtDni = new javax.swing.JTextField();
@@ -80,12 +80,12 @@ public final class VistaBuscarReserva extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         cbxActiva = new java.awt.Checkbox();
         cbxInactiva = new java.awt.Checkbox();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jLabel11 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jLFechaEntrada = new javax.swing.JLabel();
+        jLFechaSalida = new javax.swing.JLabel();
+        dchFechaEntrada = new com.toedter.calendar.JDateChooser();
+        dchFechaSalida = new com.toedter.calendar.JDateChooser();
+        jLImporteTotal = new javax.swing.JLabel();
+        textImporteTotal = new javax.swing.JTextField();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -93,7 +93,7 @@ public final class VistaBuscarReserva extends javax.swing.JInternalFrame {
         setBorder(null);
         setTitle("GESTION DE RESERVAS");
 
-        tbl.setModel(new javax.swing.table.DefaultTableModel(
+        tblReservas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -104,7 +104,7 @@ public final class VistaBuscarReserva extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tbl);
+        jScrollPane1.setViewportView(tblReservas);
 
         txtModificarReserva.setText("Modificar Reserva");
         txtModificarReserva.addActionListener(new java.awt.event.ActionListener() {
@@ -124,15 +124,21 @@ public final class VistaBuscarReserva extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(51, 51, 255));
         jLabel1.setText("DATOS DEL HUESPED");
 
-        jLabel2.setText("Nombre");
+        jLNombre.setText("Nombre");
 
-        jLabel3.setText("DNI");
+        jLDni.setText("DNI");
 
-        jLabel4.setText("Domicilio");
+        jLDomicilio.setText("Domicilio");
 
-        jLabel5.setText("Correo");
+        jLCorreo.setText("Correo");
 
-        jLabel6.setText("Celular");
+        jLCelular.setText("Celular");
+
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
 
         txtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,11 +173,11 @@ public final class VistaBuscarReserva extends javax.swing.JInternalFrame {
 
         cbxInactiva.setLabel("Inactiva");
 
-        jLabel10.setText("Fecha de Entrada");
+        jLFechaEntrada.setText("Fecha de Entrada");
 
-        jLabel12.setText("Fecha de Salida");
+        jLFechaSalida.setText("Fecha de Salida");
 
-        jLabel11.setText("Importe Total");
+        jLImporteTotal.setText("Importe Total");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -190,11 +196,11 @@ public final class VistaBuscarReserva extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jLabel4))
+                                            .addComponent(jLNombre)
+                                            .addComponent(jLCelular)
+                                            .addComponent(jLCorreo)
+                                            .addComponent(jLDni)
+                                            .addComponent(jLDomicilio))
                                         .addGap(24, 24, 24)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
@@ -220,18 +226,18 @@ public final class VistaBuscarReserva extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textImporteTotal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jLabel12)
+                                            .addComponent(jLFechaSalida)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(dchFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel11)
-                                                .addComponent(jLabel10))
+                                                .addComponent(jLImporteTotal)
+                                                .addComponent(jLFechaEntrada))
                                             .addGap(26, 26, 26)
-                                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addComponent(dchFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addGap(20, 20, 20))))
         );
         layout.setVerticalGroup(
@@ -251,26 +257,26 @@ public final class VistaBuscarReserva extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
+                            .addComponent(jLNombre))
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
+                            .addComponent(jLDomicilio)))
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLFechaEntrada)
+                            .addComponent(dchFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
+                            .addComponent(dchFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLFechaSalida))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLImporteTotal)
+                            .addComponent(textImporteTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -282,15 +288,15 @@ public final class VistaBuscarReserva extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3))
+                                    .addComponent(jLDni))
                                 .addGap(22, 22, 22)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5))
+                                    .addComponent(jLCorreo))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6))))
+                                    .addComponent(jLCelular))))
                         .addGap(0, 17, Short.MAX_VALUE)))
                 .addGap(13, 13, 13)
                 .addComponent(jLabel8)
@@ -311,7 +317,7 @@ public final class VistaBuscarReserva extends javax.swing.JInternalFrame {
         for (Object it:columnas){
             modelo.addColumn(it);
         }
-        tbl.setModel(modelo);
+        tblReservas.setModel(modelo);
         }
         
         public void borraFilasTabla(){
@@ -343,31 +349,35 @@ public final class VistaBuscarReserva extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCelularActionPerformed
 
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private java.awt.Checkbox cbxActiva;
     private javax.swing.JComboBox<String> cbxBuscar;
     private java.awt.Checkbox cbxInactiva;
+    private com.toedter.calendar.JDateChooser dchFechaEntrada;
+    private com.toedter.calendar.JDateChooser dchFechaSalida;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private javax.swing.JLabel jLCelular;
+    private javax.swing.JLabel jLCorreo;
+    private javax.swing.JLabel jLDni;
+    private javax.swing.JLabel jLDomicilio;
+    private javax.swing.JLabel jLFechaEntrada;
+    private javax.swing.JLabel jLFechaSalida;
+    private javax.swing.JLabel jLImporteTotal;
+    private javax.swing.JLabel jLNombre;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private java.awt.Label label1;
-    private javax.swing.JTable tbl;
+    private javax.swing.JTable tblReservas;
+    private javax.swing.JTextField textImporteTotal;
     private javax.swing.JButton txtCancelarReserva;
     private javax.swing.JTextField txtCelular;
     private javax.swing.JTextField txtCorreo;
