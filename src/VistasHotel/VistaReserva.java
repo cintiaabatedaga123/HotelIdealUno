@@ -87,6 +87,12 @@ public class VistaReserva extends javax.swing.JInternalFrame {
 
         jLImporteTotal.setText("Importe Total");
 
+        txtImporteTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtImporteTotalActionPerformed(evt);
+            }
+        });
+
         jLTipoHabitacion.setText("Tipo de Habitacion");
 
         buscar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -120,7 +126,12 @@ public class VistaReserva extends javax.swing.JInternalFrame {
             }
         });
 
-        cbxTipoHabitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estàndar Simple", "Doble", "Triple", "Suite Lujo", " " }));
+        cbxTipoHabitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estándar Simple", "Doble", "Triple", "Suite Lujo", "" }));
+        cbxTipoHabitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxTipoHabitacionActionPerformed(evt);
+            }
+        });
 
         tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -165,12 +176,11 @@ public class VistaReserva extends javax.swing.JInternalFrame {
                                 .addComponent(jLDni)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtCelular, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                                .addComponent(txtCorreo)
-                                .addComponent(txtDni))
                             .addComponent(txtDomicilio, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                            .addComponent(txtNombre)))
+                            .addComponent(txtNombre)
+                            .addComponent(txtCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                            .addComponent(txtCorreo)
+                            .addComponent(txtDni)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(106, 106, 106)
                         .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -277,7 +287,7 @@ public class VistaReserva extends javax.swing.JInternalFrame {
                             .addComponent(dchFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBGuardarReserva)
                     .addComponent(jBSalir))
@@ -322,6 +332,14 @@ public class VistaReserva extends javax.swing.JInternalFrame {
     private void txtDomicilioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDomicilioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDomicilioActionPerformed
+
+    private void cbxTipoHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTipoHabitacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxTipoHabitacionActionPerformed
+
+    private void txtImporteTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtImporteTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtImporteTotalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
