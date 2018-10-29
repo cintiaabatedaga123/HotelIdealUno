@@ -48,7 +48,7 @@ public class HuespedData {
             ResultSet rs = statement.getGeneratedKeys();
 
             if (rs.next()) {
-                huesped.setId(rs.getInt(1));
+                huesped.setId_huesped(rs.getInt(1));
             } else {
                 System.out.println("No se pudo obtener el id luego de insertar un husped");
             }
@@ -71,7 +71,7 @@ public class HuespedData {
             Huesped huesped;
             while(resultSet.next()){
                 huesped = new Huesped();
-                huesped.setId(resultSet.getInt("id_huesped")); 
+                huesped.setId_huesped(resultSet.getInt("id_huesped")); 
                 huesped.setNombre(resultSet.getString("nombre"));
                 huesped.setDni(resultSet.getInt("dni"));
                 huesped.setDomicilio(resultSet.getString("domicilio"));
@@ -117,11 +117,10 @@ public class HuespedData {
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, huesped.getNombre());
             statement.setInt(2, huesped.getDni());
-            //statement.setDate(2, Date.valueOf(huesped.getFecNac()));
             statement.setString(3, huesped.getDomicilio());
             statement.setString(4, huesped.getCorreo());
             statement.setLong(5, huesped.getCelular());
-            statement.setInt(6, huesped.getId());
+            statement.setInt(6, huesped.getId_huesped());
             statement.executeUpdate();
     
             statement.close();
@@ -147,7 +146,7 @@ public class HuespedData {
             
             while(resultSet.next()){
                 huesped = new Huesped();
-                huesped.setId(resultSet.getInt("id_huesped"));
+                huesped.setId_huesped(resultSet.getInt("id_huesped"));
                 huesped.setNombre(resultSet.getString("nombre"));
                 huesped.setDni(resultSet.getInt("dni"));
                 huesped.setDomicilio(resultSet.getString("domicilio"));

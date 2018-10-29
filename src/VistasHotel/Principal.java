@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Usuario
+ * @author Aballay Gabriel
  */
 public class Principal extends javax.swing.JFrame {
 
@@ -32,7 +32,7 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        escritorio = new javax.swing.JPanel();
+        escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -42,6 +42,7 @@ public class Principal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,6 +59,8 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jMenu1.setText("HUESPED");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenu1.setMargin(new java.awt.Insets(0, 0, 0, 10));
 
         jMenuItem1.setText("Registrar Huesped");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -70,6 +73,8 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("HABITACIONES");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenu2.setMargin(new java.awt.Insets(0, 0, 0, 10));
 
         jMenuItem2.setText("Tipos de Habitaciones");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +84,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem2);
 
-        jMenuItem3.setText("Habitaciones Libres");
+        jMenuItem3.setText("Gestionar Habitaciones");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -90,6 +95,8 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("RESERVAS");
+        jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenu3.setMargin(new java.awt.Insets(0, 0, 0, 10));
 
         jMenuItem4.setText("Crear Reserva");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -99,12 +106,21 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem4);
 
-        jMenuItem5.setText("Buscar/Actualizar/Cancelar Reserva");
+        jMenuItem5.setText("Gestion de Reservas");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem5);
+
+        jMenuItem6.setText("Informe");
+        jMenu3.add(jMenuItem6);
 
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("SALIR");
+        jMenu4.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu4MouseClicked(evt);
@@ -123,11 +139,11 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(escritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(escritorio)
         );
 
         pack();
@@ -140,7 +156,6 @@ public class Principal extends javax.swing.JFrame {
         vh.setVisible(true);
         vh.setLocation(200, 50);
         escritorio.add(vh);
-        //escritorio.moveToFront(vh);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -150,7 +165,6 @@ public class Principal extends javax.swing.JFrame {
         vh.setVisible(true);
         vh.setLocation(200, 50);
         escritorio.add(vh);
-        //escritorio.moveToFront(vh);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -160,7 +174,6 @@ public class Principal extends javax.swing.JFrame {
         vh.setVisible(true);
         vh.setLocation(200, 50);
         escritorio.add(vh);
-        //escritorio.moveToFront(vh);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -180,6 +193,21 @@ public class Principal extends javax.swing.JFrame {
     private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
         System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenu4MouseClicked
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        VistaGestionReserva vgr=new VistaGestionReserva();
+        vgr.setVisible(true);
+        vgr.setLocation(200, 50);
+        escritorio.add(vgr);
+
+
+
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,7 +245,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel escritorio;
+    public static javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -228,5 +256,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     // End of variables declaration//GEN-END:variables
 }

@@ -351,30 +351,31 @@ public class VistaHabitaciones extends javax.swing.JInternalFrame {
     //********** Metodo del Boton Buscar **********
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // se solicita un Nro de habitacion existente en la base de datos
-        int buscarHab;
-        do
-            buscarHab=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Nro valido de Habitacion a buscar"));
-        while (buscarHab>12);
-        Habitacion habitacion=habitacionData.buscarHabitacion(buscarHab);
-        //*******Consulta que habitacion sea diferente de null para asegurar que devuelva la habiacion deseada
-        if(habitacion!=null){
-            txtNroHabitacion.setText(habitacion.getNroHabitacion()+"");
-            if(habitacion.isEstado()){
-                chcLibre.setSelected(true);
-                chcOcupada.setSelected(false);
-            }else{
-                chcOcupada.setSelected(true);
-                chcLibre.setSelected(false);
-            }
-            txtPiso.setText(habitacion.getPiso()+"");
-            idHabitacion=habitacion.getIdHabitacion();
-            TipoHabitacion t=habitacionData.buscarTipoHabita(habitacion.getId_tipoHabitacion());
-            String tipo=t.getTipo();
-            cbxTipoHabitacion.setSelectedItem(tipo);
-            borrarFilasTabla();
-            modelo.addRow(new Object[]{t.getId(),t.getCodigo(),t.getTipo(),t.getTipoCama(),t.getCantCamas(),t.getCantPersonasMax(),t.getPrecioPorNoche()});
+        String buscarHab=JOptionPane.showInputDialog("Ingrese Nro valido de Habitacion a buscar");
+        if (buscarHab!=null){
+            int busca=Integer.parseInt(buscarHab);
+            Habitacion habitacion=habitacionData.buscarHabitacion(busca);
+            //*******Consulta que habitacion sea diferente de null para asegurar que devuelva la habiacion deseada
+            if(habitacion!=null){
+                txtNroHabitacion.setText(habitacion.getNroHabitacion()+"");
+                if(habitacion.isEstado()){
+                    chcLibre.setSelected(true);
+                    chcOcupada.setSelected(false);
+                }else{
+                    chcOcupada.setSelected(true);
+                    chcLibre.setSelected(false);
+                }
+                txtPiso.setText(habitacion.getPiso()+"");
+                idHabitacion=habitacion.getIdHabitacion();
+                TipoHabitacion t=habitacionData.buscarTipoHabita(habitacion.getId_tipoHabitacion());
+                String tipo=t.getTipo();
+                cbxTipoHabitacion.setSelectedItem(tipo);
+                borrarFilasTabla();
+                modelo.addRow(new Object[]{t.getId(),t.getCodigo(),t.getTipo(),t.getTipoCama(),t.getCantCamas(),t.getCantPersonasMax(),t.getPrecioPorNoche()});
             
-        }else{JOptionPane.showMessageDialog(null, "hbitacion no existe");}
+            }else{JOptionPane.showMessageDialog(null, "hbitacion no existe");}
+        
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     //********Metodo Boton Modificar********* 
@@ -405,6 +406,7 @@ public class VistaHabitaciones extends javax.swing.JInternalFrame {
                     cbxTipoHabitacion.setSelectedIndex(0);
             }else{JOptionPane.showMessageDialog(null, "Debe Selecccionar Un tipo de habitacion de la lista");}
         }
+       
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnBorraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorraActionPerformed

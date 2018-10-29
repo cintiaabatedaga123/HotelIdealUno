@@ -61,8 +61,53 @@ public class ReservaData {
             System.out.println("Error al insertar un reserva : " + ex.getMessage());
         }
     }
+       public void actualizarEstado(int id, boolean estado){
     
+        try {
+            
+            String sql = "UPDATE habitacion SET estado = ? WHERE id_habitacion = ?;";
 
+            PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            statement.setBoolean(1, estado);
+            statement.setInt(2, id);
+            statement.executeUpdate();
     
+            statement.close();
+    
+        } catch (SQLException ex) {
+            System.out.println("Error al ACTUALIZAR EL ESTADO DE HABITACION: " + ex.getMessage());
+        }
+    
+    }
+
+    public List<Reserva> obtenerResevas(){
+        List<Reserva> reservas = new ArrayList<>();
+            
+
+        try {
+            String sql = "SELECT * FROM reserva;";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+            Reserva reserva;
+            while(resultSet.next()){
+                reserva = new Reserva();
+                reserva.setId(resultSet.getInt("id_reserva")); 
+                reserva.setCantidadPersonas(resultSet.getInt("cantidadPersonas"));
+                reserva.setFechaEntrada(resultSet.getDate("fechaEntrada").toLocalDate());
+                reserva.setFechaSalida(resultSet.getDate("fechaSalida").toLocalDate());
+                reserva.setImporteTotal(resultSet.getDouble("importeTotal"));
+                reserva.setEstadoReserva(resultSet.getBoolean("estadoReserva"));
+                reserva.setId_habitacion(resultSet.getInt("id_habitacion"));
+                reserva.setId_huesped(resultSet.getInt("id_huesped"));
+    
+                reservas.add(reserva);
+            }      
+            statement.close();
+        } catch (SQLException ex) {
+            System.out.println("Error al obtener los huesped: " + ex.getMessage());
+        }
+        
+        return reservas;
+    }    
    
 }

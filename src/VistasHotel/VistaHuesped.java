@@ -17,10 +17,10 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Usuario
+ * @author Aballay Gabriel
  */
 public class VistaHuesped extends javax.swing.JInternalFrame {
-
+    //Declaracion de Variables
     private String nombre, direccion,correo;
     private int dni;
     private long celular;
@@ -358,21 +358,23 @@ public class VistaHuesped extends javax.swing.JInternalFrame {
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
 
         // se solicita un dni de un Huesped a buscar existente en la base de datos
-        int dniBuscar;
-        dniBuscar=Integer.parseInt(JOptionPane.showInputDialog("Ingrese DNI del Huesped"));
-        Huesped huesped=huespedData.buscarHuesped(dniBuscar);
-        if(huesped!=null){
-            //Se activa los botones actualizar y borrar
-            jbActualizar.setEnabled(true);
-            jbBorrar.setEnabled(true);
+        String dniBuscar=JOptionPane.showInputDialog("Ingrese DNI del Huesped");
+        if(dniBuscar!=null){
+            int dni=Integer.parseInt(dniBuscar);
+            Huesped huesped=huespedData.buscarHuesped(dni);
+            if(huesped!=null){
+                //Se activa los botones actualizar y borrar
+                jbActualizar.setEnabled(true);
+                jbBorrar.setEnabled(true);
 
-            //TRASPASO DE VARIABLES
-            jtNombre.setText(huesped.getNombre());
-            jtDni.setText(huesped.getDni()+"");
-            jtDireccion.setText(huesped.getDomicilio());
-            jtCorreo.setText(huesped.getCorreo());
-            jtCelular.setText(huesped.getCelular()+"");
-            id=huesped.getId();
+                //TRASPASO DE VARIABLES
+                jtNombre.setText(huesped.getNombre());
+                jtDni.setText(huesped.getDni()+"");
+                jtDireccion.setText(huesped.getDomicilio());
+                jtCorreo.setText(huesped.getCorreo());
+                jtCelular.setText(huesped.getCelular()+"");
+                id=huesped.getId_huesped();
+            }
         }
     }//GEN-LAST:event_jbBuscarActionPerformed
 

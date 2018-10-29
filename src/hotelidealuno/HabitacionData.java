@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -74,6 +75,8 @@ public class HabitacionData {
                 habitacion.setPiso(resultSet.getInt("piso"));
                 habitacion.setEstado(resultSet.getBoolean("estado"));
                 habitacion.setId_tipoHabitacion(resultSet.getInt("id_tipohabitacion"));
+                
+                habitaciones.add(habitacion);
             }      
             statement.close();
         } catch (SQLException ex) {
@@ -109,11 +112,12 @@ public class HabitacionData {
     }
     
     // BUSCA UNA HABITACION EXISTENTE EN LA BASE DE DATOS...
+ 
     public Habitacion buscarHabitacion(int nroHabitacion){
     Habitacion habitacion=null;
     try {
             
-            String sql = "SELECT * FROM habitacion WHERE  nroHabitacion = ? ;";
+            String sql = "SELECT * FROM habitacion WHERE nroHabitacion = ? ;";
 
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setInt(1, nroHabitacion);
@@ -127,7 +131,6 @@ public class HabitacionData {
                 habitacion.setPiso(resultSet.getInt("piso"));
                 habitacion.setEstado(resultSet.getBoolean("estado"));
                 habitacion.setId_tipoHabitacion(resultSet.getInt("id_tipohabitacion"));
-                
             }      
             statement.close();
             

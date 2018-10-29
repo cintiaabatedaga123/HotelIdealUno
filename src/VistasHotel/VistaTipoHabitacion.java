@@ -371,17 +371,20 @@ public class VistaTipoHabitacion extends javax.swing.JInternalFrame {
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
         // TODO add your handling code here:
-        int codigo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese Codigo de Habitacion"));
-        TipoHabitacion tipoHabitacion = tipoHabitacionData.buscarTipoHabitacion(codigo);
-        txtcodigo.setText(tipoHabitacion.getCodigo()+"");
-        txtprecio_por_noche.setText(tipoHabitacion.getPrecioPorNoche()+"");
-        txtcantidad_camas.setText(tipoHabitacion.getCantCamas()+"");
-        txtcantidad_personas.setText(tipoHabitacion.getCantPersonasMax()+"");
-        tipo=tipoHabitacion.getTipo();
-        id=tipoHabitacion.getId();
-        tipoCama=tipoHabitacion.getTipoCama();
-        cbotipo_cama.setSelectedItem(tipoCama);
-        cbotipo.setSelectedItem(tipo);
+        String codigo = JOptionPane.showInputDialog("Ingrese Codigo de Habitacion");
+        if(codigo!=null){
+            int cod=Integer.parseInt(codigo);
+            TipoHabitacion tipoHabitacion = tipoHabitacionData.buscarTipoHabitacion(cod);
+            txtcodigo.setText(tipoHabitacion.getCodigo()+"");
+            txtprecio_por_noche.setText(tipoHabitacion.getPrecioPorNoche()+"");
+            txtcantidad_camas.setText(tipoHabitacion.getCantCamas()+"");
+            txtcantidad_personas.setText(tipoHabitacion.getCantPersonasMax()+"");
+            tipo=tipoHabitacion.getTipo();
+            id=tipoHabitacion.getId();
+            tipoCama=tipoHabitacion.getTipoCama();
+            cbotipo_cama.setSelectedItem(tipoCama);
+            cbotipo.setSelectedItem(tipo);
+        }
     }//GEN-LAST:event_btnbuscarActionPerformed
 
     private void txtcantidad_personasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcantidad_personasActionPerformed
