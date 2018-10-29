@@ -63,11 +63,7 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLFechaEntrada" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="dchFechaEntrada" min="-2" pref="108" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLFechaEntrada" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLTipoHabitacion" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -75,15 +71,11 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLFechaSalida" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="28" max="32767" attributes="0"/>
-                              <Component id="dchFechaSalida" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLFechaSalida" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLCantidadPersonas" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                               <Component id="spiCantidadPersonas" min="-2" pref="47" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -166,7 +158,6 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLImporteTotal" min="-2" max="-2" attributes="0"/>
                           <Component id="txtImporteTotal" min="-2" max="-2" attributes="0"/>
-                          <Component id="dchFechaEntrada" min="-2" max="-2" attributes="0"/>
                           <Component id="jLFechaEntrada" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -177,15 +168,12 @@
                           <Component id="spiCantidadPersonas" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLFechaSalida" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="dchFechaSalida" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jLFechaSalida" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="110" max="-2" attributes="0"/>
-              <EmptySpace pref="58" max="32767" attributes="0"/>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jBGuardarReserva" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jBSalir" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -340,10 +328,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBSalirActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="dchFechaEntrada">
-    </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="dchFechaSalida">
     </Component>
     <Component class="java.awt.Checkbox" name="cbxActiva">
       <Properties>

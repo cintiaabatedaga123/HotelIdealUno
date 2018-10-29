@@ -67,8 +67,6 @@ public class VistaReserva extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl = new javax.swing.JTable();
         jBSalir = new javax.swing.JButton();
-        dchFechaEntrada = new com.toedter.calendar.JDateChooser();
-        dchFechaSalida = new com.toedter.calendar.JDateChooser();
         cbxActiva = new java.awt.Checkbox();
         cbxInactiva = new java.awt.Checkbox();
         jLabel2 = new javax.swing.JLabel();
@@ -196,23 +194,17 @@ public class VistaReserva extends javax.swing.JInternalFrame {
                         .addComponent(jBSalir))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLFechaEntrada)
-                                .addGap(33, 33, 33)
-                                .addComponent(dchFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLFechaEntrada)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLTipoHabitacion)
                                 .addGap(18, 18, 18)
                                 .addComponent(cbxTipoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(79, 79, 79)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLFechaSalida)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                                .addComponent(dchFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLFechaSalida)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLCantidadPersonas)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(46, 46, 46)
                                 .addComponent(spiCantidadPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(91, 91, 91)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,7 +266,6 @@ public class VistaReserva extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLImporteTotal)
                             .addComponent(txtImporteTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dchFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLFechaEntrada)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
@@ -282,12 +273,10 @@ public class VistaReserva extends javax.swing.JInternalFrame {
                             .addComponent(jLCantidadPersonas)
                             .addComponent(spiCantidadPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dchFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBGuardarReserva)
                     .addComponent(jBSalir))
@@ -347,8 +336,6 @@ public class VistaReserva extends javax.swing.JInternalFrame {
     private java.awt.Checkbox cbxActiva;
     private java.awt.Checkbox cbxInactiva;
     private javax.swing.JComboBox<String> cbxTipoHabitacion;
-    private com.toedter.calendar.JDateChooser dchFechaEntrada;
-    private com.toedter.calendar.JDateChooser dchFechaSalida;
     private javax.swing.JButton jBGuardarReserva;
     private javax.swing.JButton jBSalir;
     private javax.swing.JLabel jLCantidadPersonas;
