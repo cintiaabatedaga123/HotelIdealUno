@@ -502,19 +502,16 @@ public class VistaReserva extends javax.swing.JInternalFrame {
         txtImporteTotal.setText(impTotal+"");
     }//GEN-LAST:event_jButton1ActionPerformed
    void limpiar(){
-        txtNombre.setText(null);
-        txtDni.setText(null);
-        txtDomicilio.setText(null);
-        txtCorreo.setText(null);
-        txtCelular.setText(null);
-        txtId.setText(null);
-        txtFechaEntrada.setText(null);
-        txtFechaSalida.setText(null);
-        txtImporteTotal.setText(null);
+        txtNombre.setText("");
+        txtDni.setText("");
+        txtDomicilio.setText("");
+        txtCorreo.setText("");
+        txtCelular.setText("");
+        txtId.setText("");
+        txtFechaEntrada.setText("");
+        txtFechaSalida.setText("");
         chcActiva.setSelected(false);
         chcInactiva.setSelected(false);
-        idHabitacion=0;
-        idHuesped=0;
    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

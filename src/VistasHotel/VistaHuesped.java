@@ -85,6 +85,18 @@ public class VistaHuesped extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Correo");
 
+        jtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNombreActionPerformed(evt);
+            }
+        });
+
+        jtDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtDireccionActionPerformed(evt);
+            }
+        });
+
         jbGuardar.setText("Guardar");
         jbGuardar.setPreferredSize(new java.awt.Dimension(79, 24));
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -418,6 +430,14 @@ public class VistaHuesped extends javax.swing.JInternalFrame {
         jtCelular.setText(String.valueOf(jHuespes.getValueAt(cel, 4)));
         */
     }//GEN-LAST:event_jHuespesMouseClicked
+
+    private void jtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNombreActionPerformed
+
+    private void jtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDireccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtDireccionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
